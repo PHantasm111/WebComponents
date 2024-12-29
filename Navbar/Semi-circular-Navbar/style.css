@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+.container {
+    position: relative;
+    background-color: #4a6eff;
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.label {
+    position: relative;
+    height: 100px;
+    line-height: 100px;
+    width: 100%;
+    top: 10%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.label h2 {
+    position: relative;
+    font-size: 5em;
+    font-weight: 500;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.itempanel {
+    position: absolute;
+    height: 1300px;
+    width: 1300px;
+    border-radius: 50%;
+    background-color: #4a6eff;
+    top: 40%;
+    border: 3px solid #fff;
+    transition: 0.5s ease-in;
+}
+
+.itembox {
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 120%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(calc(var(--i) * 60deg));
+}
+
+.itembox a {
+    position: relative;
+    height: 15em;
+    width: 15em;
+    border: 3px solid #000;
+    border-radius: 50%;
+    line-height: 12em;
+    text-align: center;
+}
+
+.itembox a i {
+    position: absolute;
+    font-size: 8em;
+    color: #4a6eff;
+    height: 1.5em;
+    width: 1.5em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto 0;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+/* button */
+.btn-controls {
+    position: absolute;
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    justify-content: center;
+    top: 25%;
+    gap:60em;
+}
+
+.btn-controls .btn .uil {
+    display: block;
+    color: #fff;
+    scale: 10;
+    &:hover {
+        cursor:pointer;
+        color:#000;
+    }
+
+}

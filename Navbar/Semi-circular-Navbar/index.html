@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semi Circular Navbar</title>
+    <!-- Icon -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <!-- 标签名称 -->
+            <div class="label">
+                <h2>Home</h2>
+                <h2>Message</h2>
+                <h2>Notification</h2>
+                <h2>Contacts</h2>
+                <h2>Games</h2>
+                <h2>Archives</h2>
+            </div>
+
+            <!-- 标签图标 -->
+            <div class="itempanel">
+                <div class="itembox" style="--i:1">
+                    <a href="#"><i class="uil uil-envelope-star"></i></a>
+                </div>
+                <div class="itembox" style="--i:2">
+                    <a href="#"><i class="uil uil-bell"></i></a>
+                </div>
+                <div class="itembox" style="--i:3">
+                    <a href="#"><i class="uil uil-phone-volume"></i></a>
+                </div>
+                <div class="itembox" style="--i:4">
+                    <a href="#"><i class="uil uil-google-play"></i></a>
+                </div>
+                <div class="itembox" style="--i:5">
+                    <a href="#"><i class="uil uil-bookmark"></i></a>
+                </div>
+                <div class="itembox" style="--i:6">
+                    <a href="#"><i class="uil uil-estate"></i></a>
+                </div>
+            </div>
+
+            <div class="btn-controls">
+                <div class="prv btn">
+                    <i class="uil uil-angle-left-b"></i>
+                </div>
+
+                <div class="nxt btn">
+                    <i class="uil uil-angle-right-b"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- js -->
+    <script>
+        const titles = document.querySelectorAll(".label h2");
+        const itempanel = document.querySelector(".itempanel");
+        const nxtBtns = document.querySelector(".nxt");
+        const prvBtns = document.querySelector(".prv");
+
+        var increment = 0;
+        var degRotate = 0;
+
+        // nxt btn
+        nxtBtns.addEventListener("click", () => {
+
+            if (increment == 5) {
+                increment = -1;
+            }
+        
+            // change title
+            increment += 1;
+            titles.forEach((title) => {
+                title.style.bottom = increment * 100 + "px";
+            });
+
+            // rotate panel 
+            degRotate += 60;
+            itempanel.style.rotate = degRotate + "deg";
+        })
+
+        // prv btn
+        prvBtns.addEventListener("click", () => {
+            // change title
+            increment -= 1;
+            titles.forEach((title) => {
+                title.style.bottom = increment * 100 + "px";
+            });
+
+            if (increment == -1) {
+                increment = 5;
+            }
+
+            // rotate panel 
+            degRotate -= 60;
+            itempanel.style.rotate = degRotate + "deg";
+        })
+
+    </script>
+</body>
+
+</html>
